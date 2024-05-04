@@ -1,7 +1,6 @@
 @use "../../presets" as *;
 
 body,html {
-
     margin: 0;
     height: 100%;
 }
@@ -69,15 +68,92 @@ header {
         .logo__link {
             width: 100%;
             background: url('.../../../images/logo.png') no-repeat ;
-
-
             padding: 40px;
             padding-right: 270%;
         }
     }
 }
 
-// .conteiner {
-//     // margin-top: 300px;
-//     // padding-top: 100px;
-// }
+    #popup {
+        position: fixed;
+        display: none;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 400px;
+        padding: 4% 4%;
+        border-radius: 20px;
+        -webkit-box-shadow: 11px 4px 13px -3px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 11px 4px 13px -3px rgba(0, 0, 0, 0.75);
+        box-shadow: 11px 4px 13px -3px rgba(0, 0, 0, 0.75);
+        z-index: 1;
+
+        &::after {
+            content: "";
+            border-radius: 20px;
+            background-color: rgb(255, 196, 0);
+            opacity: 0.8;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index: -1;
+        }
+    }
+
+    #cross {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 20px;
+        height: 20px;
+
+    }
+
+    #cross::before {
+        transform: rotate(45deg);
+    }
+    #cross::after {
+        transform: rotate(-45deg);
+    }
+
+    #cross::before, #cross::after {
+        position: absolute;
+        top: 0;
+        right: 9px;
+        content: "";
+        width: 3px;
+        height: 24px;
+        background-color: rgb(255, 255, 255);
+        z-index: 2;
+        cursor: pointer;
+    }
+    
+
+    #name, #email, #number {
+        width: 100%;
+        margin-bottom: 4%;
+        padding: 3%;
+        border: 2px solid $color-black;
+        border-radius: 10px;
+
+        &:active {
+            border: 2px solid $color-white;
+        }
+    }
+
+    #send {
+        width: 100%;
+        margin-top: 15%;
+        padding: 6%;
+        border: 2px solid $color-black;
+        border-radius: 15px;
+
+        &:hover {
+            background-color: $color-black;
+            color: $color-white;
+        }
+    }
+
