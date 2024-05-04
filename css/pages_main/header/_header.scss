@@ -1,0 +1,83 @@
+@use "../../presets" as *;
+
+body,html {
+
+    margin: 0;
+    height: 100%;
+}
+
+header {
+    height: 100%;
+}
+
+.header {
+    height: 100%;
+
+
+    &::after {
+        content: "";
+        background: url('.../../../images/main_house.jpg') no-repeat;
+        background-size: cover;
+         min-height: 919px;
+        opacity: 0.7;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+    }
+
+    &__section {
+        grid-column: 1;
+        grid-row: 1;
+        width: 100%;
+        display: flex;
+        background-color: $color-white;
+        max-height: 13%;
+        padding: 1.2%;
+
+        &.active {
+            max-height: 26%;
+        }
+    }
+
+
+    &__logo {
+        margin-top: 15px;
+        margin-left: 10%;
+
+        // @media screen and (min-width: 480px) {
+        //     margin-top: 4%;
+        // }
+
+        // @media screen and (min-width: 760px) {
+        //     margin-top: 2%;
+        // }
+
+        
+        // @media screen and (min-width: 960px) {
+        //     margin-top: 2%;
+        // }
+    
+
+        // @media screen and (min-width: 1200px) {
+        //     margin-top: 1%;
+        // }
+    
+
+        .logo__link {
+            width: 100%;
+            background: url('.../../../images/logo.png') no-repeat ;
+
+
+            padding: 40px;
+            padding-right: 270%;
+        }
+    }
+}
+
+// .conteiner {
+//     // margin-top: 300px;
+//     // padding-top: 100px;
+// }
